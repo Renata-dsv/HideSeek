@@ -1,36 +1,47 @@
-function findSum(numbers) {
+// Define findSum function
+function findSum(array) {
     let sum = 0;
-    for (let number of numbers) {
-        sum += number;
+    for (let i = 0; i < array.length; i++) {
+        sum += array[i];
     }
     return sum;
 }
 
+// Define subtractNumbers function
 function subtractNumbers(a, b) {
     return a - b;
 }
 
+// Define  multiplyNumbers function that multiplies two numbers.
 function multiplyNumbers(a, b) {
     return a * b;
 }
 
+// Define divideNumbers function that divides the first number by the second number, handling the case where the second number is zero
 function divideNumbers(a, b) {
     if (b === 0) {
-        return 'Error: Division by zero';
+        return "Error: Division by zero";
     }
     return a / b;
 }
 
-let numbersArray = [8, 4, 2];
+// Create an array with three integers
+let numbers = [10, 5, 2];
 
-let sum = findSum(numbersArray);
-console.log(`Sum of the array: ${sum}`); 
+// Use the array to call the findSum function and log its return value
+let sum = findSum(numbers);
+console.log("Sum of the array:", sum);
 
-let difference = subtractNumbers(numbersArray[0], numbersArray[1]);
-console.log(`Difference between the first and second number: ${difference}`); // Output: Difference between the first and second number: 4
+// Use the first and second number from the array to call subtractNumbers and log its return value
+let difference = subtractNumbers(numbers[0], numbers[1]);
+console.log("Difference of the first and second number:", difference);
 
-let product = multiplyNumbers(numbersArray[2], numbersArray[0]);
-console.log(`Product of the third and first number: ${product}`); // Output: Product of the third and first number: 16
+// Use the third number and the first number from the array to call multiplyNumbers and log its return value
+let product = multiplyNumbers(numbers[2], numbers[0]);
+console.log("Product of the third and first number:", product);
 
-let quotient = divideNumbers(sum, numbersArray[2]);
-console.log(`Quotient of the sum and the third number: ${quotient}`); // Output: Quotient of the sum and the third number: 7
+// Call divideNumbers using the sum of all three numbers obtained from findSum and the third number from the array. Log its return value.
+let divisionResult = divideNumbers(sum, numbers[2]);
+console.log("Division of the sum by the third number:", divisionResult);
+
+
